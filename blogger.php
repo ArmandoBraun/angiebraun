@@ -1,13 +1,7 @@
 <?php
 //get the q parameter from URL
 $q=$_GET["q"];
-
-//find out which feed was selected
-if($q=="Google") {
-  $xml=("http://news.google.com/news?ned=us&topic=h&output=rss");
-} elseif($q=="NBC") {
-  $xml=("http://rss.msnbc.msn.com/id/3032091/device/rss/rss.xml");
-}
+$xml=("http://braunangela.wordpress.com/feed");
 
 $xmlDoc = new DOMDocument();
 $xmlDoc->load($xml);
