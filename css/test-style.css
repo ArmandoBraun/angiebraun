@@ -13,7 +13,6 @@ details,
 figcaption,
 figure,
 footer,
-header,
 hgroup,
 main,
 menu,
@@ -46,8 +45,44 @@ a:hover {
   outline: 0;
   text-transform: none;
   text-decoration: none;
-
 }
+
+header {
+  margin-top: -35px;
+    padding-top: 0;
+    float: right;
+    margin-right: 15px;
+    font-size: .7em
+}
+
+.modal-dialog {}
+      .thumbnail {margin-bottom:6px;}
+
+      .modal-dialog {
+        width: 75%;
+      }
+
+      .modal-content {
+        border-radius: 4px;
+
+      }
+      .carousel-control.left{
+        background-image:none;
+        margin-top:0%;
+        margin-left: 2%;
+        width:5%;
+      }
+        .carousel-control.right{
+        background-image:none;
+        margin-top:0%;
+        margin-right: 2%;
+        width:5%;
+      }
+      .modal-description p {
+        color: red;
+        font-size: 2em;
+      }
+
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -360,6 +395,7 @@ img {
 .modal-dialog {}
 .thumbnail {
   border: none;
+  margin: auto;
 }
 
 .carousel-control.left,.carousel-control.right{
@@ -696,6 +732,24 @@ abbr[data-original-title] {
   font-size: 90%;
   text-transform: uppercase;
 }
+
+.sobremi {
+  color: #777;
+  font-size: 1.2em;
+  font-style: ;
+  min-height: 500px
+}
+
+.sobremi-foto img{
+  width: 30%;
+    border-radius: 140px;
+    margin: auto;
+    display: block;
+    margin-bottom: 25px;
+  
+
+}
+
 blockquote {
   padding: 10.5px 21px;
   margin: 0 0 21px;
@@ -997,6 +1051,15 @@ table th[class*="col-"] {
   min-height: 0.01%;
 }
 @media screen and (max-width: 767px) {
+  
+    header {
+          margin-top: 10px;
+    padding-top: 0;
+    float: left;
+    margin-right: 15px;
+    margin-left: 15px;
+    }
+
   .eg {
     width: 100%;
     margin-bottom: 15.75px;
@@ -1098,6 +1161,13 @@ output {
   line-height: 1.5;
   color: #ffffff;
 }
+
+.btn-danger {
+    color: #fff;
+    background-color: #848daf;
+    border-color: #5f6785;
+}
+
 .form-control {
   display: block;
   width: 100%;
@@ -1105,21 +1175,21 @@ output {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.5;
-  color: #ffffff;
-  background-color: #434857;
+  color: #333;
+  background-color: #f2f2f2;
   background-image: none;
-  border: 1px solid #434857;
+  border: 1px solid #eee;
   border-radius: 4px;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.09);
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 .form-control:focus {
-  border-color: #ffffff;
+  border-color: #eee;
   outline: 0;
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 255, 255, 0.7);
 }
 .form-control::-moz-placeholder {
-  color: #cfd2da;
+  color: #333;
   opacity: 1;
 }
 .form-control:-ms-input-placeholder {
@@ -5184,7 +5254,7 @@ button.close {
 }
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 600px;
+    width: 85%;
     margin: 30px auto;
   }
   .modal-content {
