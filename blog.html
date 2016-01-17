@@ -8,7 +8,7 @@
 
     <title>
       
-        angie braun - quien soy
+        angie braun - blog
       
     </title>
 
@@ -24,12 +24,36 @@
     <link href="css/special.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
 
+    <script>
+      function showRSS(str) {
+        if (str.length==0) { 
+          document.getElementById("rssOutput").innerHTML="";
+          return;
+        }
+        if (window.XMLHttpRequest) {
+          // code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp=new XMLHttpRequest();
+        } else {  // code for IE6, IE5
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function() {
+          if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+            document.getElementById("rssOutput").innerHTML=xmlhttp.responseText;
+          }
+        }
+        xmlhttp.open("GET","getrss.php?q="+str,true);
+        xmlhttp.send();
+      }
+</script>
+
+
 </head>
 
 
 <body>
+
   <header>
-  <p><a href="#"><b>Español</b></a> | <a href="http://angiebraun.com/about_me">English</a></p>
+  <p><a href=""><b>Español</b></a> | <a href="http://angiebraun.com/blog-en">English</a></p>
 </header>
 
   <div class="bw">
@@ -60,10 +84,10 @@
                   <a href="http://angiebraun.com/paisajes">paisajes</a>
                 </ul>
               </li>
-              <li >
+              <li class="active">
                 <a href="http://angiebraun.com/blog">blog</a>
               </li>
-              <li class="active">
+              <li>
                 <a href="http://angiebraun.com/quien_soy">quien soy</a>
               </li>
               <li>
@@ -81,25 +105,13 @@
             <a href="http://angiebraun.com"><h2 class="apc">angie braun</h2></a>
             <div class="sub-header">photography</div>
           </div>
-           <h4 class="apc" style="text-align:right; margin-top:25px">quien soy</h4>
+           <h4 class="apc" style="text-align:right; margin-top:25px"> blog</h4>
         </div>
 
           <hr class="aky">
-          <div class="col-md-12 col-sm-12">
-
-            <div class="sobremi-foto">
-              <img src="img/profile.png" alt="foto de perfil">
+            <div class="col-md-12 col-sm-12">
+                <div id="rssOutput">RSS-feed will be listed here...</div>                 
             </div>
-
-            <div class="sobremi">
-              Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-              The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-            </div>
-
-
-
-                </div>
 
 
 
