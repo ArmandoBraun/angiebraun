@@ -36,21 +36,21 @@
         } else {  // code for IE6, IE5
           xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
         }
-        xmlhttp.onreadystatechange=function() {
-          if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        xmlhttp.onload=function() {
+          if (xmlhttp==4 && xmlhttp.status==200) {
             document.getElementById("rssOutput").innerHTML=xmlhttp.responseText;
           }
         }
-        xmlhttp.open("GET","getrss.php?q="+str,true);
+        xmlhttp.open("GET","blogger.php?q="+str,true);
         xmlhttp.send();
       }
-</script>
+      </script>
 
 
 </head>
 
 
-<body>
+<body onload="showRSS(str)">
 
   <header>
   <p><a href=""><b>Español</b></a> | <a href="http://angiebraun.com/blog-en">English</a></p>
@@ -110,7 +110,7 @@
 
           <hr class="aky">
             <div class="col-md-12 col-sm-12">
-                <div id="rssOutput">RSS-feed will be listed here...</div>                 
+               <div id="rssOutput"></div>              
             </div>
 
 
